@@ -1,0 +1,127 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "no-trailing-spaces": [
+      "off"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "no-return-assign": [
+      "off"
+    ],
+    "no-param-reassign": [
+      "off"
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterSuper": true,
+        "allowAfterThis": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "max-len": [
+      "error",
+      120,
+      2,
+      {
+        "ignoreComments": true
+      }
+    ],
+    "no-unused-vars": [
+      "error"
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "react/no-array-index-key": [
+      "error"
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/react-in-jsx-scope": [
+      "off"
+    ],
+    "react/prefer-stateless-function": [
+      0,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/prop-types": [
+      "off"
+    ],
+    "class-methods-use-this": [
+      "off"
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      "off"
+    ],
+    "import/no-extraneous-dependencies": [
+      "off"
+    ],
+    "react/sort-comp": [
+      "off"
+    ]
+  },
+  "globals": {
+    "document": false,
+    "window": false,
+    "__DEV__": false,
+    "__PRO__": false,
+    "moment": true,
+    "lodash": true,
+  }
+}
