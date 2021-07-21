@@ -243,7 +243,7 @@ module.exports = () => {
         }
       }),
       new HtmlWebpackPlugin({
-        title: "plugin-monitor-frontend",
+        title: "app",
         filename: "index.html",
         inject: true,
         template: path.resolve(__dirname, "./src/index.html"),

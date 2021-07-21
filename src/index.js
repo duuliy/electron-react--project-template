@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import "moment/locale/zh-cn"
 import { ConfigProvider } from "antd"
 import zhCN from "antd/lib/locale-provider/zh_CN"
+import RoutersMap from '@/routers/routersMap'
 import './assets/icons'
 // 公用CSS模块
 import 'antd/dist/antd.less'
@@ -23,11 +24,14 @@ if (module.hot) {
 // <React.StrictMode>
 ReactDOM.render(
   <ConfigProvider locale={zhCN} componentSize="small">
-    <Align />
+    <RoutersMap />
   </ConfigProvider>
   ,
   document.getElementById('root')
 )
+
+
+
 
 
 

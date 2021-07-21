@@ -1,5 +1,5 @@
 {
-  "name": "plugin-monitor-frontend",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "author": "duuliy (715181149@qq.com)",
@@ -124,6 +124,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.1.0",
     "progress-bar-webpack-plugin": "^2.1.0",
+    "react-hot-loader": "^4.13.0",
     "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "svg-sprite-loader": "^5.2.1",
@@ -135,6 +136,7 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }
