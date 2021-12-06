@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { setHeaders } from './common.js'
 import { message } from 'antd'
+import qs from 'qs'
 
 //测试环境，服务器环境，线上环境
 // let baseUrl = 'http://39.108.82.150:81/index.php/api/';
@@ -29,23 +30,23 @@ const errPrompt = msg => {
  *
  * @param  {string} method    The type we want to request
  * @param  {string} url       The URL we want to request
- * @param  {object} data      The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
+ * @param  {object} payload      The options we want to pass to "fetch"
+ * @return {object}           An object containing either "payload" or "err"
  */
 
-const request = (method, url, data = {}, mock = false) => {
+const request = (method, url, payload = {}, mock = false) => {
   url =  mock ? `/mock${url}` : `/api${url}`
   // 由于ID加密，密文可能存在特殊字符，如"/"，无法用url传参，可以用encodeURIComponent对url中的参数进行编码来避免以上问题
-  const headers = setHeaders(data)
+  const headers = setHeaders(payload)
 
   // 统一处理文件
-  // if (!(data instanceof FormData)) {
-  //   data = JSON.stringify(data)
+  // if (!(payload instanceof FormData)) {
+  //   payload = JSON.stringify(payload)
   // }
 
   if (method === 'get') {
     return new Promise((resolve, reject) => {
-      url = `${url}?${JSON.stringify(data)}`
+      url = `${url}?${qs.stringify(payload)}`
       axios.get(baseUrl + url, {
         headers: headers,
       })
@@ -67,7 +68,7 @@ const request = (method, url, data = {}, mock = false) => {
       axios({
         method: method,
         url: baseUrl + url,
-        data: data,
+        data: payload,
         headers: headers,
       })
         .then(checkStatus)

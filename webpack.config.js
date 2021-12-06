@@ -6,8 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const apiMocker = require('mocker-api')
 
 const env = process.env.NODE_ENV || 'dev'
@@ -249,6 +249,14 @@ module.exports = () => {
         template: path.resolve(__dirname, "./src/index.html"),
         hash: true
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'public'),
+            to: path.resolve(__dirname, 'dist/public'),
+          },
+        ],
+      })
     ],
   }
   if (isDev) {
@@ -257,7 +265,6 @@ module.exports = () => {
   } else {
     options.plugins = options.plugins.concat([
       new CleanWebpackPlugin(),
-      new HardSourceWebpackPlugin(),
       new MiniCssExtractPlugin({
         filename: `${version}/[name].css`,
         chunkFilename: `${version}/[name].[contenthash].css`,
