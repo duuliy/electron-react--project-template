@@ -27,7 +27,7 @@ module.exports = () => {
       publicPath: isDev ? '/' : './',
     },
     devServer: {
-      compress: !isDev,
+      compress: true,
       clientLogLevel: 'warning',
       hot: true,
       inline: true,
