@@ -10,7 +10,6 @@ const { BrowserWindow } = remote
 const PrefixCls = 'align-tool'
 
 const Align = ({ props }) => {
-  console.log(666)
   const getCake = async () => {
     const res = await api.getCake()
     console.log(res)
